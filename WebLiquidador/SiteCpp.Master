@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteCpp.Master.cs" Inherits="WebLiquidador.SiteCpp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <link rel="icon" type="image/ico" href="/Imagenes/Sena.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Menu</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style3 {
+        
+        }
+
+        .auto-style5 {
+            width: 72%;
+            height: 40px;
+        }
+        .auto-style7 {
+            width: 63px;
+        }
+        .auto-style8 {
+            height: 40px;
+        }
+        .auto-style9 {
+            height: 40px;
+            width: 102px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="page">
+            <div class="headerCpp">
+                <div class="title">
+                    <h1>Sistema Liquidador Costas Procesales - Sena</h1>
+                </div>
+                <div class="clear hideSkiplinkCpp">
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style5">
+                                <asp:Menu ID="NavigationMenu" runat="server" BackColor="DarkOliveGreen" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="White" Orientation="Horizontal" StaticSubMenuIndent="10px" Font-Bold="False" MaximumDynamicDisplayLevels="6" EnableViewState="False">
+                                    <DynamicHoverStyle BackColor="#669999" ForeColor="White" />
+                                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                    <DynamicMenuStyle BackColor="DarkOliveGreen" />
+                                    <DynamicSelectedStyle BackColor="#507CD1" />
+                                   
+                                    <Items>
+                                        <asp:MenuItem NavigateUrl="~/DefaultCp.aspx" Text="Página Principal" >
+                                            <asp:MenuItem NavigateUrl="~/Imagenes/AcercaCpp.pdf" Text="Acerca de" Value="Acerca de" Target="_blank"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Costas Procesales" Value="Costas Procesales">
+                                            <asp:MenuItem Text="Abogado" Value="Abogado">
+                                                <asp:MenuItem Text="Mantenimiento" Value="Mantenimiento" NavigateUrl="~/Paginas/CostasProcesales/Deudor/Abogado.aspx"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Deudor" Value="Deudor">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Deudor/Deudor.aspx" Text="Mantenimiento" Value="Mantenimiento"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Obligación" Value="Obligación">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Obligacion/Obligacion.aspx" Text="Mantenimiento" Value="Mantenimiento"></asp:MenuItem>
+                                                <asp:MenuItem Text="Pagos" Value="Pagos">
+                                                    <asp:MenuItem Text="Pagos Realizados" Value="Pagos Realizados" NavigateUrl="~/Paginas/CostasProcesales/Obligacion/Pagos.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Pagos/CargarArchivo.aspx" Text="Cargar" Value="Cargar"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Pagos/ControlCarguePagos.aspx" Text="Consulta Cargue" Value="Consulta Cargue"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Proyección Intereses" Value="Proyección Intereses" NavigateUrl="~/Paginas/CostasProcesales/Obligacion/ProyeccionIntereses.aspx"></asp:MenuItem>
+                                                <asp:MenuItem Text="Facilidad de Pago" Value="Facilidad de Pago">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Cuota/PlanAmortizacion.aspx" Text="Plan de Amortización" Value="Plan de Amortización"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Reportes" Value="Reportes">
+                                                <asp:MenuItem Text="Obligaciones" Value="Obligaciones">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Reportes/ObligacionesTodas.aspx" Target="_blank" Text="Todas" Value="Todas"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Pagos" Value="Pagos">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Reportes/PagosObligacion_Todos.aspx" Target="_blank" Text="Todos" Value="Todos"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Reportes/AccesoUsuario.aspx" Text="Acceso Usuarios" Value="Acceso Usuarios"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Parámetro" Value="Parámetro">
+                                            <asp:MenuItem Text="Juzgado" Value="Juzgado">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Juzgado/Juzgado.aspx" Text="Mantenimiento" Value="Mantenimiento"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Interés Bancario Corriente" Value="Interés Bancario Corriente">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Global/TasaInteresMoratorio.aspx" Text="Mantenimiento" Value="Mantenimiento"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Usuario" Value="Usuario">
+                                            <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Usuario/UsuarioCambioClave.aspx" Text="Cambio de Clave" Value="Cambio de Clave"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Usuario/UsuarioMonitoreo.aspx" Text="Monitoreo" Value="Monitoreo"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Usuario/Usuarios.aspx" Text="Usuario" Value="Usuario"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/CostasProcesales/Usuario/UsuariosReeviarClave.aspx" Text="Reenvío Clave" Value="Reenvío Clave"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Salir" />
+                                    </Items>
+                                    <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                    <StaticSelectedStyle BackColor="#507CD1" />
+                                </asp:Menu>
+                            </td>
+                            <td class="auto-style9"></td>
+                            <td class="auto-style8">
+                                <asp:Label ID="LblFecha" runat="server" ForeColor="White" Style="font-weight: 700"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer">
+            <table class="auto-style3">
+                <tr>
+                    <td class="auto-style7">
+                        &nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:Label ID="LblNombreUsuario" runat="server" Font-Bold="True" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="LblNombreEntidad" runat="server" ForeColor="Black" Style="font-weight: 700"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+
