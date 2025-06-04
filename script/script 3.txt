@@ -1,0 +1,109 @@
+ALTER PROCEDURE [CentroFormacion].[Usp_ProcesarCuponPago]
+	-- Add the parameters for the stored procedure here
+@IdUsuario int,
+@IdTipoIngreso int
+AS
+BEGIN
+
+update [CentroFormacion].[CuponPagoCargue] set [Centro] = '36-02-00-0010000000'
+where [Centro]='36-02-00-001'
+
+Declare @NroInternodeTransaccion nvarchar, @IdCuponPagoCargue int
+
+SET @NroInternodeTransaccion = 0
+
+Select @NroInternodeTransaccion = MAX([NroInternodeTransaccion]) 
+From [CentroFormacion].[CuponPago]
+
+DECLARE Cu_Cursor CURSOR FOR Select [IdCuponPagoCargue]
+							FROM [CentroFormacion].[CuponPagoCargue]
+							WHERE [NroInternodeTransaccion] = '99999999'
+	
+OPEN Cu_Cursor
+fetch next from Cu_Cursor
+Into @IdCuponPagoCargue
+while @@fetch_status = 0
+BEGIN
+		SET @NroInternodeTransaccion = @NroInternodeTransaccion + 1
+		UpDATE [CentroFormacion].[CuponPagoCargue] SET [NroInternodeTransaccion] = CONVERT(nvarchar(8), @NroInternodeTransaccion)
+		WHERE  IdCuponPagoCargue = @IdCuponPagoCargue
+
+FETCH NEXT FROM Cu_Cursor
+Into @IdCuponPagoCargue
+END
+CLOSE Cu_Cursor;
+DEALLOCATE Cu_Cursor
+
+
+INSERT INTO [CentroFormacion].[CuponPago]
+           ([Identificacion]
+           ,[PrimerNombre]
+           ,[PrimerApellido]
+           ,[Departamento]
+           ,[CiudadCapital]
+           ,[CorreoElectronico]
+           ,[Centro]
+		   ,[NumeroFactura]
+           ,[ValorTotaldelPago]
+           ,[NroInternodeTransaccion]
+           ,[EntidadFinancieraAutorizadora]
+           ,[CodigoSistemadePago]
+           ,[FechaEntidadFinanciera]
+           ,[EsActivo]
+           ,[IdUsuarioCrea]
+           ,[FechaCrea]
+		   ,[IdTipoIngreso]
+		   ,[IdOrigenPago])
+SELECT     [Identificacion]
+           ,[PrimerNombre]
+           ,[PrimerApellido]
+           ,[Departamento]
+           ,[CiudadCapital]
+           ,[CorreoElectronico]
+           ,Substring([Centro],14,4) [Centro]
+		   ,[NumeroFactura]
+           ,[ValorTotaldelPago]
+           ,[NroInternodeTransaccion]
+           ,[EntidadFinancieraAutorizadora]
+           ,[CodigoSistemadePago]
+           ,[FechaEntidadFinanciera]
+           ,1 [EsActivo]
+           ,@IdUsuario
+           ,getdate()
+		   ,@IdTipoIngreso
+		   ,1
+  FROM [CentroFormacion].[CuponPagoCargue] A
+  WHERE NOT EXISTS (Select 1 From [CentroFormacion].[CuponPago] B
+					where A.NroInternodeTransaccion = B.NroInternodeTransaccion)
+
+	Update [CentroFormacion].[CuponPago] set Centro = '0000'
+	where [Centro] is null or [Centro] = ''
+
+	Update [CentroFormacion].[CuponPago] set [CodigoSistemadePago] = '95'
+	where [CodigoSistemadePago] is null
+
+	Update [CentroFormacion].[CuponPago] set [Departamento] = '0'+[Departamento]
+	where len([Departamento])= 1
+	
+	--Verifica----------------------------------------------------------------------
+	exec [CentroFormacion].[Usp_VerificarFacturaPagada]
+
+	--Actualiza Cupon ------------------------------------------------------------------
+	exec [CentroFormacion].[Usp_CuponPagoSinIdentificarCentroCruzar]
+
+	--- Busca el Año del pago
+	exec [CentroFormacion].[Usp_AñoCuponPago]
+	
+	--SELECT @Error = @@ERROR
+
+	--if @Error <> 0
+	--	begin
+	--		ROLLBACK TRANSACTION ProcesarCuponPago
+	--	end
+	--else
+	--	begin
+	--		COMMIT TRANSACTION; 
+	--	end
+
+
+END
