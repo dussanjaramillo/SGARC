@@ -80,7 +80,7 @@
                                                 <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/CuponPagoCarneFotocopias.aspx" Text="Carné y Fotocopias" Value="Carné y Fotocopias"></asp:MenuItem>
                                                 <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/PagosRapidosSinPreFactura.aspx" Text="Pagos Rápidos Sin PreFactura" Value="Pagos Rápidos Sin PreFactura"></asp:MenuItem>
                                             </asp:MenuItem>
-                                            <asp:MenuItem Text="Presupuesto" Value="Presupuesto" Enabled="False">
+                                            <asp:MenuItem Text="Presupuesto" Value="Presupuesto" Enabled="True">
                                                 <asp:MenuItem Text="Por Regional" Value="Por Regional" NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/PresupuestoXRegional.aspx"></asp:MenuItem>
                                                 <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/VariacionPresupuesto.aspx" Text="Variación" Value="Variación"></asp:MenuItem>
                                             </asp:MenuItem>
