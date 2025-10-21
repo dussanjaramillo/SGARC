@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebLiquidador.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <link rel="icon" type="image/ico" href="/Imagenes/Sena.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Menu Principal</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 97%;
+        }
+
+        .auto-style3 {
+        }
+
+        .auto-style5 {
+            width: 1043px;
+        }
+
+        .auto-style7 {
+            width: 63px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1>Sistema de Gestión de Atención al Ciudadano - Recaudo y Cartera</h1>
+                </div>
+                <div class="clear hideSkiplink">
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style5">
+                                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" DynamicHorizontalOffset="2" EnableViewState="False" Font-Names="Verdana" Font-Size="0.8em" IncludeStyleBlock="False" Orientation="Horizontal" StaticSubMenuIndent="10px" BackColor="#E3EAEB" ForeColor="#666666">
+                                    <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                    <DynamicMenuStyle BackColor="#E3EAEB" />
+                                    <DynamicSelectedStyle BackColor="#1C5E55" />
+
+                                    <Items>
+                                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página Principal">
+                                            <asp:MenuItem NavigateUrl="~/Imagenes/Acercade.pdf" Target="_blank" Text="Acerca de" Value="Acerca de"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Atención al Ciudadano" Value="Atención al Ciudadano">
+
+                                            <asp:MenuItem Text="Estado de Cuenta" Value="Estado de Cuenta">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/EstadoCuenta.aspx" Text="Histórico" Value="Histórico"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/EstadoCuentaHistorico.aspx" Text="Histórico Acumulado" Value="Histórico Acumulado"></asp:MenuItem>
+                                            </asp:MenuItem>
+
+                                            <asp:MenuItem Text="Consulta de:" Value="Consulta de:">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/ConsultaNormas.aspx" Text="Normas" Value="Normas"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/ReportadosUgpp.aspx" Text="Reportados Ugpp" Value="Reportados Ugpp"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/EstadoPagoPila.aspx" Text="Estado Pagos Pila" Value="Estado Pagos Pila"></asp:MenuItem>
+                                            </asp:MenuItem>
+
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Direccion General" Value="Direccion General">
+                                            <asp:MenuItem Text="Ugpp" Value="Ugpp">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/AvisoIncumplimiento.aspx" Text="Aviso de Incumplimiento en el Pago" Value="Aviso de Incumplimiento en el Pago"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/CarteraRealCalcularMorosos.aspx" Text="Calcular Cartera Real" Value="Calcular Cartera Real"></asp:MenuItem>
+                                                <asp:MenuItem Text="Desagregado y Consolidado" Value="Desagregado y Consolidado">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/ConsolidadoMensual.aspx" Text="Consolidado" Value="Consolidado"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/DesagregadoTrimestral.aspx" Text="Desagregado" Value="Desagregado"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/Desagregado.aspx" Text="Desagregado Mensual Storm-User" Value="Desagregado Mensual Storm-User"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Desagregado - Eliminar" Value="Desagregado - Eliminar" NavigateUrl="~/Paginas/Ugpp/DesagregadoEliminar.aspx"></asp:MenuItem>
+                                                </asp:MenuItem>
+
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/LiquidacionesPresuntas.aspx" Text="Liquidaciones Presuntas" Value="Liquidaciones Presuntas"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/Generar Correos.aspx" Text="Generación de Correos" Value="Generación de Correos"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/UbicacionYContacto.aspx" Text="Ubicación y Contacto" Value="Ubicación y Contacto"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/FechaDiaFestivo.aspx" Text="Fecha Dia Festivo" Value="Fecha Dia Festivo"></asp:MenuItem>
+                                                <asp:MenuItem Text="Acuerdo 1035 de 2015" Value="Acuerdo 1035 de 2015">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/Cargar_Acuerdo_1035_2015.aspx" Text="Cargar Archivo" Value="Cargar Archivo"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Procesar Archivo" Value="Procesar Archivo" NavigateUrl="~/Paginas/Ugpp/ProcesarAcuerdo1035de2015.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/ControlCargueAcuerdo1035de2015.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Resolución 1127 de 2020" Value="Resolución 1127 de 2020">
+                                                    <asp:MenuItem Text="Ajuste de Información" Value="Ajuste de Información" NavigateUrl="~/Paginas/Ugpp/AjustesInformación.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Devoluciones" Value="Devoluciones" NavigateUrl="~/Paginas/Ugpp/Devoluciones.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Pagos Por Fuera de Pila" Value="Pagos Por Fuera de Pila" NavigateUrl="~/Paginas/Ugpp/PagosPorFueraPila.aspx"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Actualizar" Value="Actualizar">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Ugpp/AP_Meses_Exentos.aspx" Text="Meses Exentos" Value="Meses Exentos"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Cartera Sirec" Value="Cartera Sirec" NavigateUrl="~/Paginas/Ugpp/CarteraSirec.aspx"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Normas" Value="Normas">
+                                                    <asp:MenuItem Target="_blank" NavigateUrl="~/Paginas/Normas/Anexo_Tecnico_Ugpp_Estandares_Cobro_Cartera_Morosa.pdf" Text="Anexo Técnico - Estándares De Procesos De Cobro De Cartera Morosa" Value="Anexo Técnico - Estándares De Procesos De Cobro De Cartera Morosa"></asp:MenuItem>
+                                                    <asp:MenuItem Target="_blank" NavigateUrl="~/Paginas/Normas/Resolución Estándares de Procesos de cobro No. 2082 de 2016.pdf" Text="Resolución Estándares de Procesos de cobro No. 2082 de 2016" Value="Resolución Estándares de Procesos de cobro No. 2082 de 2016"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/Normas/resolucion_ugpp_1127_2020.pdf" Target="_blank" Text="Resolución 1127-2020" Value="Resolución 1127-2020"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Reciproco" Value="Reciproco" NavigateUrl="~/Paginas/DireccionGeneral/Reciprocos.aspx"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/EntidadPublica.aspx" Text="Entidad Publica" Value="Entidad Publica"></asp:MenuItem>
+                                            <asp:MenuItem Text="Conciliación PILA" Value="Conciliación PILA">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/DetallesBancos.aspx" Text="Detalles Bancos" Value="Detalles Bancos"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/DetallesSoi.aspx" Text="Detalles Soi" Value="Detalles Soi"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/DetallesSoiContraloria.aspx" Text="Detalles Soi Contraloría" Value="Detalles Soi Contraloría"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/CruceBancosVsSoi.aspx" Text="Cruce Bancos Vs Soi" Value="Cruce Bancos Vs Soi"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/CruceSoiVsBancos.aspx" Text="Cruce Soi Vs Bancos" Value="Cruce Soi Vs Bancos"></asp:MenuItem>
+                                            </asp:MenuItem>
+<%--                                            <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/EstadoPagosCarteraMasivo.aspx" Text="Estado Pagos Cartera Masivo" Value="Estado Pagos Cartera Masivo" Enabled="False"></asp:MenuItem>--%>
+                 <%--                           <asp:MenuItem Text="Cruce Pse Vs Cartera Regional" Value="Cruce Pse Vs Cartera Regional" Enabled="False">
+                                                <asp:MenuItem Text="Cruce" Value="Cruce">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/CargarArchivo.aspx" Text="Cargar" ToolTip="Cargue de los Archivos" Value="Cargar"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/ProcesarPseVsCartera.aspx" Text="Procesar" ToolTip="Procesa los Archivos" Value="Procesar"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Resultado" ToolTip="Muestra el Resultado" Value="Resultado" NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/ResultadoPseVsCartera.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/ChequeDevuelto.aspx" Text="Cheque Devuelto" Value="Cheque Devuelto"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Modificación" Value="Modificación" NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/Modificacion.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/ModificacionReporte.aspx" Text="Reporte de Modificaciones" Value="Reporte de Modificaciones"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Control Archivos" Value="Control Archivos" NavigateUrl="~/Paginas/DireccionGeneral/PseVsCartera/ControlCarguePagos.aspx"></asp:MenuItem>
+                                            </asp:MenuItem>--%>
+<%--                                            <asp:MenuItem Text="Ahorro Fondo Vivienda" Value="Ahorro Fondo Vivienda" Enabled="False">
+                                                <asp:MenuItem Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/DireccionGeneral/AhorroFondoVivienda/CargarArchivo.aspx" Text="Cargar" Value="Cargar"></asp:MenuItem>
+                                            </asp:MenuItem>--%>
+                                        </asp:MenuItem>
+
+<%--                                        <asp:MenuItem Text="Siif II" Value="Siif II">
+                                            <asp:MenuItem Text="Cargar" Value="Cargar">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Siif/CargarArchivo.aspx" Text="Saldos Por Imputar" Value="Saldos Por Imputar"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/Siif/ControlCargueArchivo.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>--%>
+                                        <asp:MenuItem Text="Usuario" Value="Usuario">
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/Usuario/UsuarioCambioClave.aspx" Text="Cambio de Clave" Value="Cambio de Clave"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/Usuario/UsuarioMonitoreo.aspx" Text="Monitoreo" Value="Monitoreo"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/Usuario/Usuarios.aspx" Text="Usuario" Value="Usuario"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/Usuario/UsuariosReeviarClave.aspx" Text="Reenvío de Clave" Value="Reenvío de Clave"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/Usuario/Coordinador.aspx" Text="Coordinador" Value="Coordinador"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/MantenimientoSgarc.aspx" Text="Mantenimiento App" Value="Mantenimiento App"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Parámetro" Value="Parámetro">
+                                            <asp:MenuItem NavigateUrl="~/Paginas/AtencionCiudadano/Usuario/Rol.aspx" Text="Rol" Value="Rol"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/Parametro/Regional.aspx" Text="Regional" Value="Regional"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/Parametro/SalarioMinimo.aspx" Text="Salario Minimo" Value="Salario Minimo"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/Parametro/SubsidioTransporte.aspx" Text="Subsidio Transporte" Value="Subsidio Transporte"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Salir" />
+                                    </Items>
+                                    <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                    <StaticSelectedStyle BackColor="#1C5E55" />
+                                </asp:Menu>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <asp:Label ID="LblFecha" runat="server" ForeColor="White" Style="font-weight: 700"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer">
+            <table class="auto-style3">
+                <tr>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:Label ID="LblNombreUsuario" runat="server" Font-Bold="True" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="LblNombreEntidad" runat="server" ForeColor="Black" Style="font-weight: 700"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

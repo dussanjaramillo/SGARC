@@ -1,0 +1,31 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VisorDevolucionCuponPago.aspx.cs" Inherits="WebLiquidador.Paginas.ProduccionCentros.CuponPago.Reportes.VisorDevolucionCuponPago" %>
+
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True">
+        </asp:ScriptManager>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1000px" Height="1000px">
+        </rsweb:ReportViewer>
+    
+    </div>
+    
+            <asp:SqlDataSource ID="SdsBuscarDevolucionCuponPagoXIdDevolucionCuponPago" runat="server" ConnectionString="<%$ ConnectionStrings:LiquidadorConnectionString %>" SelectCommand="[CentroFormacion].[Usp_BuscarDevolucionCuponPagoXIdDevolucionCuponPago]" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:SessionParameter Name="IdDevolucionCuponPago" SessionField="_IdDevolucionCuponPago" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+    
+    </form>
+</body>
+</html>

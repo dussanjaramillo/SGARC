@@ -1,0 +1,318 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteCf.master.cs" Inherits="WebLiquidador.SiteCf" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <link rel="icon" type="image/ico" href="/Imagenes/Sena.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Menu</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style3 {
+        
+        }
+
+        .auto-style5 {
+            width: 72%;
+            height: 40px;
+        }
+        .auto-style7 {
+            width: 63px;
+        }
+        .auto-style8 {
+            height: 40px;
+        }
+        .auto-style9 {
+            height: 40px;
+            width: 102px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="page">
+            <div class="headerCf">
+                <div class="title">
+                    <h1>Sistema Nacional de Producción de Centros de Formación - Sena</h1>
+                </div>
+                <div class="clear hideSkiplink">
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style5">
+                                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" DynamicHorizontalOffset="2" EnableViewState="False" Font-Names="Verdana" Font-Size="0.8em" IncludeStyleBlock="False" StaticSubMenuIndent="10px" BackColor="#F7F6F3" ForeColor="#7C6F57" Orientation="Horizontal" MaximumDynamicDisplayLevels="6">
+                                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" Font-Bold="False" />
+                                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" Font-Bold="False" />
+                                    <DynamicMenuStyle BackColor="#F7F6F3" />
+                                    <DynamicSelectedStyle BackColor="#5D7B9D" />
+                                    <Items>
+                                        <asp:MenuItem NavigateUrl="~/DefaultCf.aspx" Text="Página Principal">
+                                            <asp:MenuItem Text="Documentos" Value="Documentos">
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/AcercadeCentrosdeFormacion.pdf" Text="Manual del Sistema" Value="Manual del Sistema" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/Lineamientos Operativos Plan de Acción 2020.pdf" Text="Lineamientos Operativos Plan de Acción 2020" Value="Lineamientos Operativos Plan de Acción 2020" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="http://compromiso.sena.edu.co/mapa/descarga.php?id=1510" Text="Sena Proveedor Sena y Sena AutoConsumo" Value="Sena Proveedor Sena y Sena AutoConsumo" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/ComiteDePrecios.pdf" Text="Comité de Precios" Value="Comité de Precios" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/ComiteDePreciosCreacion.pdf" Text="Ejemplo Creación Comité de Precios" Value="Ejemplo Creación Comité de Precios" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="http://compromiso.sena.edu.co/mapa/descarga.php?id=1603" Text="Recaudo Producción" Value="Recaudo Producción" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/Decreto_249_del_28_01_2004.pdf" Text="Decreto 249 del 28/01/2004" Value="Decreto 249 del 28/01/2004" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="http://compromiso.sena.edu.co/mapa/descarga.php?id=2107" Text="Procedimiento de Devolución de Recursos" Value="Procedimiento de Devolución de Recursos" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/Circular - 3-2021-000060 - Facturación Electrónica DIAN para Producción de Centros.pdf" Text="Circular - 3-2021-000060 - Facturación Electrónica DIAN" Value="Circular - 3-2021-000060 - Facturación Electrónica DIAN" Target="_blank"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Imagenes/CapacitacionProduccionCentros.pdf" Text="Capacitación Producción de Centros" Value="Capacitación Producción de Centros" Target="_blank"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Contacto.aspx" Text="Contacto" Value="Contacto"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        
+                                        <asp:MenuItem Text="Gestión" Value="Gestión">
+                                            <asp:MenuItem Text="Ingresos" Value="Ingresos">
+                                                <asp:MenuItem Text="Por Regional" Value="Por Regional" NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/IngresosXRegionalXCentro.aspx">
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Por Centro" Value="Por Centro" NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/IngresosXCentro.aspx">
+                                                </asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/ConsultaCuponPago.aspx" Text="Por Cupón de Pago" Value="Por Cupón de Pago"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/CuponPagoUnidos.aspx" Text="Cupon de Pago Unidos" Value="Cupon de Pago Unidos"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Sirec/EstadisticaPagos.aspx" Text="Pagos Sirec - Ecollect" Value="Pagos Sirec - Ecollect"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/CuponPagoSinAsignar.aspx" Text="Cupón de Pago Sin Asignar" Value="Cupón de Pago Sin Asignar"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/CuponPagoCarneFotocopias.aspx" Text="Carné y Fotocopias" Value="Carné y Fotocopias"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/PagosRapidosSinPreFactura.aspx" Text="Pagos Rápidos Sin PreFactura" Value="Pagos Rápidos Sin PreFactura"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Presupuesto" Value="Presupuesto" Enabled="True">
+                                                <asp:MenuItem Text="Por Regional" Value="Por Regional" NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/PresupuestoXRegional.aspx"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/VariacionPresupuesto.aspx" Text="Variación" Value="Variación"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Seguimiento" Value="Seguimiento">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Seguimiento/CumplimientoMeta.aspx" Text="Cumplimiento Metas" Value="Cumplimiento Metas"></asp:MenuItem>
+                                                <asp:MenuItem Text="Informe" Value="Informe">
+                                                    <asp:MenuItem Text="Consulta Respuestas" Value="Consulta Respuestas" NavigateUrl="~/Paginas/ProduccionCentros/Seguimiento/ConsultaRespuestasSeguimiento.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Cumplimiento Generar" Value="Cumplimiento Generar" NavigateUrl="~/Paginas/ProduccionCentros/Seguimiento/GeneraSeguimiento.aspx"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Gerente Público" Value="Gerente Público">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/GerentePublico/Cargar.aspx" Text="Cargar" Value="Cargar"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/GerentePublico/Consulta.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Asignación Recursos" Value="Asignación Recursos">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/AsignacionRecursos/Centros.aspx" Text="Centro" Value="Centro"></asp:MenuItem>
+                                                <asp:MenuItem Text="Digeneral" Value="Digeneral" NavigateUrl="~/Paginas/ProduccionCentros/AsignacionRecursos/Digeneral.aspx"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Estadisticas" Value="Estadisticas">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Estadisticas/FacturasXRegionalXMesAñoXCentro.aspx" Text="Por Regional Por Mes y Año" Value="Por Regional Por Mes y Año"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Estadisticas/ValorProductosXCentro.aspx" Text="Valor Productos" Value="Valor Productos"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Emergencia Económica" Value="Emergencia Económica">
+                                                <asp:MenuItem Text="Inventario" Value="Inventario">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/InventarioEntrada.aspx" Text="Entradas" Value="Entradas"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/InventarioProductos.aspx" Text="Saldo de Productos" Value="Saldo de Productos"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Apoyo" Value="Apoyo">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/Factura.aspx" Text="Generar" Value="Generar"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Imprimir" Value="Imprimir">
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/ImprimirFactura.aspx" Text="Apoyo" Value="Apoyo"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/ImprimirFacturaDetalle.aspx" Text="Detalle" Value="Detalle"></asp:MenuItem>
+                                                    </asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/AnularFactura.aspx" Text="Anular" Value="Anular"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/FacturaModificar.aspx" Text="Modificar" Value="Modificar"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Informes Movimiento" Value="Informes Movimiento">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/InventarioEntradaAnuladas.aspx" Text="Entradas" Value="Entradas"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/InventarioVentas.aspx" Text="Apoyo" Value="Apoyo"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/InventarioAyudas/InventarioMovimientos.aspx" Text="Entradas Vs Apoyo" Value="Entradas Vs Apoyo"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Wompi" Value="Wompi">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Wompi/ImprimirQr.aspx" Text="Imprimir Qr Link Wompi Pagos Rápidos" Value="Imprimir Qr Link Wompi Pagos Rápidos"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+                                        <asp:MenuItem Text="Catálogo" Value="Catálogo">
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/CatalogoProducto.aspx" Text="Catálogo de Productos Por Centro" Value="Catálogo de Productos Por Centro"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/CatalogoProductoNoUsados.aspx" Text="Catálogo de Productos Por Centro - No Usados" Value="Catálogo de Productos Por Centro - No Usados"></asp:MenuItem>
+                                            <asp:MenuItem Text="Consulta" Value="Consulta">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/ConsultaCatalogo.aspx" Text="Catálogo de Productos por Centro" Value="Catálogo de Productos por Centro"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/NombreProducto.aspx" Text="Por Nombre o Código Producto" Value="Por Nombre o Código Producto"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/Catalogo.aspx" Text="Catalogo UNSPSC" Value="Catalogo UNSPSC"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/CentrosSinCatalogo.aspx" Text="Centros Sin Catálogo" Value="Centros Sin Catálogo"></asp:MenuItem>
+                                            <asp:MenuItem Text="Catálogo" Value="Catálogo">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/CatalogoCentroNacional.aspx" Text="Nacional" Value="Nacional"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Catalogo/UNSPSC.aspx" Text="UNSPSC" Value="UNSPSC"></asp:MenuItem>
+                                                <asp:MenuItem Text="Siif Nación" Value="Siif Nación">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/CargarArchivoCatalogo.aspx" Text="Cargar Archivo" Value="Cargar Archivo"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/ControlCargueCatalogo.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Inventario" Value="Inventario" Selectable="False">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Inventario/InventarioEntrada.aspx" Text="Entradas" Value="Entradas" Selectable="False"></asp:MenuItem>
+                                                <asp:MenuItem Text="Movimientos" Value="Movimientos" Selectable="False">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Inventario/InventarioMovimientos.aspx" Text="Entradas" Value="Entradas" Selectable="False"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Inventario/InventarioVentas.aspx" Text="Ventas" Value="Ventas" Selectable="False"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Inventario/InventarioProductos.aspx" Text="Productos" Value="Productos" Selectable="False"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+                                        <asp:MenuItem Text="Prefactura" Value="Prefactura">
+                                            <asp:MenuItem Text="Generar" Value="Generar">
+                                                <asp:MenuItem Text="Cotización" Value="Cotización">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/Cotizacion.aspx" Text="Nueva" Value="Nueva"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Imprimir" Value="Imprimir" NavigateUrl="~/Paginas/ProduccionCentros/Factura/ImprimirCotizacion.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/CotizacionADefinitiva.aspx" Text="A Definitiva" Value="A Definitiva"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Diaria" Value="Diaria">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaDiaria.aspx" Text="Crear (Tipo Cliente Particular)" Value="Crear (Tipo Cliente Particular)"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaDiariaEliminar.aspx" Text="Eliminar" Value="Eliminar"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaDiariaAFactura.aspx" Text="Diaria A Definitiva" Value="Diaria A Definitiva"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaDiariaConsultaXCentro.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Definitiva" Value="Definitiva">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/Factura.aspx" Text="Nueva" Value="Nueva"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaModificar.aspx" Text="Modificar" Value="Modificar"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Wompi" Value="Wompi">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Wompi/FacturaPagosRapidos.aspx" Text="Pagos Rápidos" Value="Pagos Rápidos"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Detalle" Value="Detalle">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaProducto.aspx" Text="Consulta Por Producto" Value="Consulta Por Producto"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaDetalle.aspx" Text="Informe Por Producto" Value="Informe Por Producto"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/BuscarFacturaXNumero.aspx" Text="Consulta por Prefactura" Value="Consulta por Prefactura"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/ImprimirFactura.aspx" Text="Imprimir" Value="Imprimir"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/AnularFactura.aspx" Text="Anular" Value="Anular"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/CorregirNumeroFactura.aspx" Text="Ingresos Sin Prefactura" Value="Ingresos Sin Prefactura"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/FacturaNoPagada.aspx" Text="No Pagado" Value="No Pagado"></asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+
+                                        <asp:MenuItem Text="Siif Nación" Value="Siif Nación">
+                                            <asp:MenuItem Text="Imprimir Prefactura Para Siif" Value="Imprimir Prefactura Para Siif" NavigateUrl="~/Paginas/ProduccionCentros/Siif/ImprimirFactura.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Factura Electrónica" Value="Factura Electrónica">
+                                                <asp:MenuItem Text="Conciliación Siif - Sgarc" Value="Conciliación Siif - Sgarc">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/Facturas/ConciliaciónSiifSgarcDeContado.aspx" Text="De Contado" Value="De Contado"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/Facturas/ConciliaciónSiifSgarcAPlazos.aspx" Text="A Plazos" Value="A Plazos"></asp:MenuItem>
+</asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/Facturas/PrefacturasPagadasSinFacturacion.aspx" Text="Prefacturas Pagadas Sin Facturación" Value="Prefacturas Pagadas Sin Facturación"></asp:MenuItem>
+                                                <asp:MenuItem Text="Cargar Por Centro" Value="Cargar Por Centro">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/Facturas/DeContado/CargarArchivo.aspx" Text="De Contado" Value="De Contado"></asp:MenuItem>
+                                                    <asp:MenuItem Text="A Plazos" Value="A Plazos" NavigateUrl="~/Paginas/ProduccionCentros/Siif/Facturas/APlazos/CargarArchivo.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/Facturas/ConsultaCargueFacturas.aspx" Text="Consulta Cargue Facturas" Value="Consulta Cargue Facturas"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Consulta Pdf" Value="Consulta Pdf" NavigateUrl="~/Paginas/ProduccionCentros/Siif/ConsultaFacturaPdf.aspx"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/ConsultaPci.aspx" Text="Posición de Catálogo Institucional - Pci" Value="Posición de Catálogo Institucional - Pci"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/IdentificacionPSECentros.aspx" Text="Identificación para Pagos en Línea " Value="Identificación para Pagos en Línea "></asp:MenuItem>
+                                            <asp:MenuItem Text="Cargar" Value="Cargar" Selectable="False">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/CargarArchivo.aspx" Text="Factura Electrónica" Value="Factura Electrónica" Selectable="False"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/ErrorCargue.aspx" Text="Registros con Error" Value="Registros con Error" Selectable="False"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/CargarArchivoZip.aspx" Text="Archivo Zip" Value="Archivo Zip"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Siif/ControlCargueZip.aspx" Text="Control Cargue Zip" Value="Control Cargue Zip"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+
+                                        <asp:MenuItem Text="Cargar" Value="Cargar">
+                                            <asp:MenuItem Text="Pagos" Value="Pagos">
+                                                <asp:MenuItem Text="Ecollect" Value="Ecollect">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/CargarArchivo.aspx" Text="Cargar Archivo" Value="Cargar Archivo"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/ControlCarguePagos.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Cupón" Value="Cupón">
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/AsociarCuponFacturaPorValor.aspx" Text="Asociar Por Diferente Valor" Value="Asociar Por Diferente Valor"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/DistribucionCuponPago.aspx" Text="Distribuir" Value="Distribuir"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/CuponPagoDistribuido.aspx" Text="Distribuídos" Value="Distribuídos"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/EliminarCuponPago.aspx" Text="Eliminar" Value="Eliminar"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Factura/AnularFacturaXNumero.aspx" Text="Liberar" Value="Liberar"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/TrasladoCuponPago.aspx" Text="Trasladar" Value="Trasladar"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Unir" Value="Unir">
+                                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/UnirCupon.aspx" Text="Por Centro" Value="Por Centro"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/NroInternodeTransaccionMaximo.aspx" Text="Nro Interno de Transaccion (Max)" Value="Nro Interno de Transaccion (Max)"></asp:MenuItem>
+                                                    </asp:MenuItem>
+                                                    <asp:MenuItem Text="Devolución" Value="Devolución">
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/DevolucionCuponPago.aspx" Text="Autorizar" Value="Autorizar"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/ImprimirDevolucionCuponPago.aspx" Text="Imprimir" Value="Imprimir"></asp:MenuItem>
+                                                        <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/CuponPago/DevolucionCuponPagoConfirmar.aspx" Text="Confirmar" Value="Confirmar"></asp:MenuItem>
+                                                    </asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Wompi" Value="Wompi">
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Wompi/CargarArchivo.aspx" Text="Cargar Archivo" Value="Cargar Archivo"></asp:MenuItem>
+                                                    <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Wompi/ControlCarguePagos.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Presupuesto" Value="Presupuesto">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/CargarArchivoPresupuestoInicial.aspx" Text="Inicial" Value="Inicial"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/CargarArchivoMovimientos.aspx" Text="Movimientos" Value="Movimientos"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/ControlPresupuesto.aspx" Text="Consulta" Value="Consulta"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Presupuesto/CargarCompromiso.aspx" Text="Compromiso" Value="Compromiso"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+                                        <asp:MenuItem Text="Usuario" Value="Usuario">
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Usuario/UsuarioCambioClave.aspx" Text="Cambio de Clave" Value="Cambio de Clave"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Usuario/UsuariosReeviarClave.aspx" Text="Reenvío Clave" Value="Reenvío Clave"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Usuario/UsuarioMonitoreo.aspx" Text="Monitoreo" Value="Monitoreo"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Usuario/Usuarios.aspx" Text="Usuario" Value="Usuario"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Usuario/Subdirector.aspx" Text="Subdirector" Value="Subdirector"></asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+                                        <asp:MenuItem Text="Parámetro" Value="Parámetro">
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Basicas.aspx" Text="Básicas" Value="Básicas"></asp:MenuItem>
+                                            <asp:MenuItem Text="Centros de Formación" Value="Centros de Formación">
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Centros.aspx" Text="Mantenimiento" Value="Mantenimiento"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/ControlCentroFormacion.aspx" Text="Control" Value="Control"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/Wompi/GenerarQrCentroFormacion.aspx" Text="Qr" Value="Qr"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/UnidadProductiva.aspx" Text="Unidad Productiva" Value="Unidad Productiva"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/Parametro/UnidadMedida.aspx" Text="Unidad Medida" Value="Unidad Medida"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/MantenimientoCf.aspx" Text="Mantenimiento App" Value="Mantenimiento App"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Paginas/ProduccionCentros/MantenimientoMensajesUsuarios.aspx" Text="Mantenimiento Mensaje" Value="Mantenimiento Mensaje"></asp:MenuItem>
+                                        </asp:MenuItem>
+
+
+                                        <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Salir" />
+                                    </Items>
+                                    <StaticHoverStyle ForeColor="White" BackColor="#7C6F57" />
+                                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                    <StaticSelectedStyle BackColor="#5D7B9D" />
+                                </asp:Menu>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <asp:Label ID="LblFecha" runat="server" ForeColor="White" Style="font-weight: 700"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer">
+            <table class="auto-style3">
+                <tr>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:Label ID="LblNombreUsuario" runat="server" Font-Bold="True" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="LblNombreEntidad" runat="server" ForeColor="Black" Style="font-weight: 700"></asp:Label>
+                    &nbsp;-
+                        <asp:Label ID="LblNumeroVisitante" runat="server" BackColor="Black" Font-Bold="True" Font-Size="Medium" ForeColor="White"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+

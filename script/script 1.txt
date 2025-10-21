@@ -1,0 +1,2 @@
+ALTER TABLE liquidador.CentroFormacion.CuponPago
+ALTER COLUMN NroInternodeTransaccion NVARCHAR(15);
