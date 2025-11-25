@@ -220,6 +220,110 @@
             color: #556B2F;
             width: 98px;
         }
+        /* ===== FOOTER GENERAL ===== */
+.footer-sena {
+    width: 100%;
+    font-family: "Open Sans", Arial, sans-serif;
+    margin-top: 40px;
+}
+
+/* --- Bloque blanco con enlaces --- */
+.footer-links {
+    background: #FFFFFF;
+    padding: 25px 0;
+    text-align: center;
+    color: #000;
+}
+
+    .footer-links ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin: 8px 0;
+    }
+
+    .footer-links a {
+        color: #0055B8;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+.footer-copy {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #333;
+    opacity: 0.9;
+}
+
+/* --- Franja verde entre enlaces y logos --- */
+.footer-green-bar {
+    background: #38A900;
+    height: 20px;
+    width: 100%;
+}
+
+/* --- Franja azul con logos (como en el portal) --- */
+.footer-logos {
+    background: #3269D6; /* azul muy similar al screenshot */
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-logos-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* si lo quieres exactamente centrado: center */
+    padding: 5px 20px;
+}
+
+.footer-logos img {
+    display: block;
+}
+
+.logo-co {
+    height: 55px; /* tamaño aproximado del screenshot */
+}
+
+.logo-divider {
+    width: 1px;
+    height: 45px;
+    background: #FFFFFF;
+    margin: 0 24px;
+    display: inline-block;
+}
+
+.logo-gov {
+    height: 40px; /* gov.co ligeramente más bajo que CO */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-logos-inner {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logos-inner {
+        flex-direction: column;
+    }
+
+    .logo-divider {
+        width: 60%;
+        height: 1px;
+        margin: 12px 0;
+    }
+}
     </style>
 </head>
 <body>
@@ -367,6 +471,9 @@
                 <tr>
                     <td class="auto-style12" style="background-color: #ff6a00"></td>
                 </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
             </table>
 
         </div>
@@ -418,5 +525,53 @@
             </tr>
         </table>
     </form>
+<!-- Footer -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="padding: 0;">
+                    <footer class="footer-sena">
+
+                <div class="footer-links">
+
+                    <div class="footer-links-inline">
+                        <a href="https://www.sena.edu.co/es-co/Paginas/politicasCondicionesUso.aspx#derechoAutor" target="_blank">
+                            Derechos de autor y/o autorización de uso sobre contenidos
+                        </a>
+
+                        <span class="separator">|</span>
+
+                        <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/habeas_data.aspx" target="_blank">
+                            Política de Tratamiento para Protección de Datos Personales
+                        </a>
+
+                        <span class="separator">|</span>
+
+                        <a href="https://compromiso.sena.edu.co/index.php?text=inicio&amp;id=27" target="_blank">
+                            Política de seguridad y privacidad de la información
+                        </a>
+                    </div>
+
+                    <div class="footer-copy">
+                        © Servicio Nacional de Aprendizaje SENA – Todos los derechos reservados — Versión 1.0.4</div>
+                </div>
+
+                <div class="footer-green-bar"></div>
+
+                <div class="footer-logos">
+                    <div class="footer-logos-inner">
+
+                        <img class="logo-co" src="http://sirec.sena.edu.co/sirec/img/comunicaciones/marca_colombia.png" alt="CO Colombia">
+
+                        <span class="logo-divider"></span>
+
+                        <img class="logo-gov" src="http://sirec.sena.edu.co/sirec/img/comunicaciones/header_govco.png" alt="gov.co">
+
+                    </div>
+                </div>
+
+            </footer>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
