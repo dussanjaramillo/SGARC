@@ -559,12 +559,12 @@
 
                 <div class="footer-logos">
                     <div class="footer-logos-inner">
-
-                        <img class="logo-co" src="http://sirec.sena.edu.co/sirec/img/comunicaciones/marca_colombia.png" alt="CO Colombia">
+                      
+                        <img class="logo-co" src="/Imagenes/marca_colombia.png" alt="CO Colombia">
 
                         <span class="logo-divider"></span>
 
-                        <img class="logo-gov" src="http://sirec.sena.edu.co/sirec/img/comunicaciones/header_govco.png" alt="gov.co">
+                        <img class="logo-gov" src="/Imagenes/header_govco.png" alt="gov.co">
 
                     </div>
                 </div>
